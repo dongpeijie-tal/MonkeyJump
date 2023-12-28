@@ -8,8 +8,8 @@
     android:id="@+id/stubcontainer"
     android:background="@drawable/bg">
 
-    <com.example.tp.DraggableImageViewGroup
-        android:id="@+id/imContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+<!--    <com.example.monkeyjump.DraggableImageViewGroup-->
+<!--        android:id="@+id/imContainer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
