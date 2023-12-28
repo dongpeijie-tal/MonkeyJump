@@ -58,10 +58,6 @@ class MainActivity : AppCompatActivity(), TtsUtils.ISpeechProgressChanged {
 //        }
         TtsUtils.initTTS(this, this)
 
-        lifecycleScope.launch {
-            delay(2000)
-            TtsUtils.speak(story)
-        }
     }
 
     override fun onSpeechProgressChanged(sequence: Int, index: Int) {
