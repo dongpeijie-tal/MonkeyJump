@@ -2,6 +2,7 @@ package com.example.monkeyjump
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity(), TtsUtils.ISpeechProgressChanged {
             return
         }
         try {
+            // 回调不够准确 使用append会丢字
             val substring = story.substring(0, rawIndex)
             tvStory.setText(substring)
         } catch (ex: IndexOutOfBoundsException) {

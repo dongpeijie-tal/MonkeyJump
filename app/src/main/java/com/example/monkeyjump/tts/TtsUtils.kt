@@ -78,15 +78,16 @@ object TtsUtils : SpeechSynthesizerListener {
 
     }
 
-    override fun onSynthesizeDataArrived(p0: String?, p1: ByteArray?, p2: Int, p3: Int) {
-        Log.e(TAG, "onSynthesizeDataArrived: 0:$p0 2:$p2 3:$p3")
+    override fun onSynthesizeDataArrived(p0: String, p1: ByteArray?, p2: Int, p3: Int) {
+        Log.d(TAG, "onSynthesizeDataArrived: 0:$p0 2:$p2 3:$p3")
+
     }
 
     override fun onSynthesizeFinish(p0: String?) {
 
     }
 
-    override fun onSpeechStart(p0: String?) {
+    override fun onSpeechStart(p0: String) {
 
     }
 
