@@ -14,7 +14,7 @@ import androidx.core.widget.ImageViewCompat.setImageTintList
  * Author: ghc
  * Date : 17/8/6
  */
-class DrawableSticker(private val drawable: Drawable) : Sticker() {
+class DrawableSticker(private val drawable: Drawable, ) : Sticker() {
     private val realBounds: Rect
 
     init {
@@ -22,21 +22,18 @@ class DrawableSticker(private val drawable: Drawable) : Sticker() {
         init(drawable.intrinsicWidth, drawable.intrinsicHeight)
     }
 
-    override fun draw(canvas: Canvas) {
-        canvas.save()
+    override fun draw(canvas: Canvas?) {
+        canvas!!.save()
         canvas.concat(matrix)
         drawable.bounds = realBounds
         drawable.draw(canvas)
         canvas.restore()
     }
 
-    override fun getWidth(): Int {
-        return drawable.intrinsicWidth
-    }
-
-    override fun getHeight(): Int {
-        return drawable.intrinsicHeight
-    }
+    override val width: Int
+        get() = drawable.intrinsicWidth
+    override val height: Int
+        get() = drawable.intrinsicHeight
 
     override fun setSelectTint(color: Int) {
         DrawableCompat.setTintMode(drawable,PorterDuff.Mode.MULTIPLY)

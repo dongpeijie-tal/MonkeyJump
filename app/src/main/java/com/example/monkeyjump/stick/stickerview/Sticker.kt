@@ -10,14 +10,14 @@ import android.graphics.Path
  */
 abstract class Sticker {
     var isInit = false
-    var matrix: Matrix? = null
+    lateinit var matrix: Matrix
         private set
-    private var srcPts: FloatArray? = null
-    var dst: FloatArray? = null
+    private lateinit var srcPts: FloatArray
+    lateinit var dst: FloatArray
         private set
-    var rotateSrcPts: FloatArray? = null
+    lateinit var rotateSrcPts: FloatArray
         private set
-    private var boundPath: Path? = null
+    lateinit var boundPath: Path
     var minStickerSize = 0f
     fun init(width: Int, height: Int) {
         matrix = Matrix()
@@ -52,11 +52,11 @@ abstract class Sticker {
 
     fun getBoundPath(): Path? {
         boundPath!!.reset()
-        boundPath!!.moveTo(dst!![0], dst!![1])
-        boundPath!!.lineTo(dst!![2], dst!![3])
-        boundPath!!.lineTo(dst!![4], dst!![5])
-        boundPath!!.lineTo(dst!![6], dst!![7])
-        boundPath!!.lineTo(dst!![0], dst!![1])
+        boundPath!!.moveTo(dst[0], dst[1])
+        boundPath!!.lineTo(dst[2], dst[3])
+        boundPath!!.lineTo(dst[4], dst[5])
+        boundPath!!.lineTo(dst[6], dst[7])
+        boundPath!!.lineTo(dst[0], dst[1])
         return boundPath
     }
 
